@@ -4,6 +4,7 @@ public class NumberToRomanConverter {
 
     private static final String[] NUMERALS_1_9 = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
     private static final String[] NUMERALS_10_90 = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    private static final String[] NUMERALS_100_900 = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
 
     public String convertToNumerals(Integer input) {
         String s = null;
@@ -15,6 +16,7 @@ public class NumberToRomanConverter {
             }
 
             s = new StringBuilder()
+                    .append(NUMERALS_100_900[input % 1000 / 100])
                     .append(NUMERALS_10_90[input % 100 / 10])
                     .append(NUMERALS_1_9[input % 10])
                     .toString();
