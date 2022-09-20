@@ -22,4 +22,4 @@ Don't worry about how far you get... we're more interested in you reaching the p
 
 ##  Assumptions ##
 - Roman Numerals don't have zero
-- Maximum number to convert to Roman numerals is 3000 and minimum number is 1
+- Maximum number to convert to Roman numerals is 3999 and minimum number is 1
