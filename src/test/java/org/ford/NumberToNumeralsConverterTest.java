@@ -61,4 +61,19 @@ public class NumberToNumeralsConverterTest {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
         assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
     }
+
+    @DisplayName("Should pass a non zero number from 200 - 1000 to our test method")
+    @ParameterizedTest(name = "#{index} - Test with Int : {0}")
+    @CsvSource({
+            "200, CC",
+            "303, CCCIII",
+            "600, DC",
+            "719, DCCXIX",
+            "888, DCCCLXXXVIII",
+            "1000, M"
+    })
+    void shouldReturnRomanNumeralForNumberRange200_1000(int number, String romanNumeral) {
+        NumberToRomanConverter numberConverter = new NumberToRomanConverter();
+        assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
+    }
 }
