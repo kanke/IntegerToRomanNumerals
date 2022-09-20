@@ -39,7 +39,8 @@ public class NumberToNumeralsConverterTest {
             "6, VI",
             "7, VII",
             "8, VIII",
-            "9, IX"
+            "9, IX",
+            "10, X"
     })
     void shouldReturnRomanNumeralForNumberRange(int number, String romanNumeral) {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
