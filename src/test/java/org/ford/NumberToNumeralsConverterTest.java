@@ -2,6 +2,7 @@ package org.ford;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -25,5 +26,15 @@ public class NumberToNumeralsConverterTest {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
         assertThrows(IllegalArgumentException.class,
                 ()-> assertEquals(number, numberConverter.convertToNumerals(number)));
+    }
+
+    @DisplayName("Should pass a non zero number to our test method")
+    @ParameterizedTest(name = "#{index} - Test with Int : {0}")
+    @CsvSource({
+            "1, I"
+    })
+    void shouldReturnRomanNumeralForNumberRange(int number, String romanNumeral) {
+        NumberToRomanConverter numberConverter = new NumberToRomanConverter();
+        assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
     }
 }
