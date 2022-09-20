@@ -89,4 +89,14 @@ public class NumberToNumeralsConverterTest {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
         assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
     }
+
+    @DisplayName("Should pass a non zero number from above 3000 to our test method")
+    @ParameterizedTest(name = "#{index} - Test with Int : {0}")
+    @CsvSource({
+            "4000, IV"
+    })
+    void shouldNotReturnRomanNumeralForNumberAbove3000(int number, String romanNumeral) {
+        NumberToRomanConverter numberConverter = new NumberToRomanConverter();
+        assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
+    }
 }
