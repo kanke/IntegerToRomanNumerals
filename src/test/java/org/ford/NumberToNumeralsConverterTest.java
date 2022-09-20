@@ -31,7 +31,15 @@ public class NumberToNumeralsConverterTest {
     @DisplayName("Should pass a non zero number to our test method")
     @ParameterizedTest(name = "#{index} - Test with Int : {0}")
     @CsvSource({
-            "1, I"
+            "1, I",
+            "2, II",
+            "3, III",
+            "4, IV",
+            "5, V",
+            "6, VI",
+            "7, VII",
+            "8, VIII",
+            "9, IX"
     })
     void shouldReturnRomanNumeralForNumberRange(int number, String romanNumeral) {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
