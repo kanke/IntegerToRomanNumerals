@@ -25,7 +25,7 @@ public class NumberToNumeralsConverterTest {
     void shouldReturnErrorForZeroNumber(int number) {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
         assertThrows(IllegalArgumentException.class,
-                ()-> assertEquals(number, numberConverter.convertToNumerals(number)));
+                () -> assertEquals(number, numberConverter.convertToNumerals(number)));
     }
 
     @DisplayName("Should pass a non zero number to our test method")
