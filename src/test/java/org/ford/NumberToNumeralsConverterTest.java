@@ -28,7 +28,7 @@ public class NumberToNumeralsConverterTest {
                 () -> assertEquals(number, numberConverter.convertToNumerals(number)));
     }
 
-    @DisplayName("Should pass a non zero number to our test method")
+    @DisplayName("Should pass a non zero number from 1 - 10 to our test method")
     @ParameterizedTest(name = "#{index} - Test with Int : {0}")
     @CsvSource({
             "1, I",
@@ -42,7 +42,22 @@ public class NumberToNumeralsConverterTest {
             "9, IX",
             "10, X"
     })
-    void shouldReturnRomanNumeralForNumberRange(int number, String romanNumeral) {
+    void shouldReturnRomanNumeralForNumberRange1_10(int number, String romanNumeral) {
+        NumberToRomanConverter numberConverter = new NumberToRomanConverter();
+        assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
+    }
+
+    @DisplayName("Should pass a non zero number from 15 - 100 to our test method")
+    @ParameterizedTest(name = "#{index} - Test with Int : {0}")
+    @CsvSource({
+            "15, XV",
+            "40, XL",
+            "62, LXII",
+            "81, LXXXI",
+            "90, XC",
+            "100, C"
+    })
+    void shouldReturnRomanNumeralForNumberRange15_100(int number, String romanNumeral) {
         NumberToRomanConverter numberConverter = new NumberToRomanConverter();
         assertEquals(romanNumeral, numberConverter.convertToNumerals(number));
     }
